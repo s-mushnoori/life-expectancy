@@ -10,7 +10,7 @@ Refactored scripts are available in the [`Scripts`](https://github.com/s-mushnoo
 # Instructions for use
 
 1. Navigate to the [`Scripts`](https://github.com/s-mushnoori/life-expectancy/tree/main/Scripts) folder and download the contents into your working directory. 
-2. Ensure that [`processing.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/processing.py), [`create_model.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/create_model.py), and [`evaluate.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/evaluate.py) are in the same location.
+2. Ensure that [`processing.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/processing.py), [`create_model.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/create_model.py), and [`evaluate.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/evaluate.py) are in the same location locally.
 3. Run `pcreate_model.py` in your preferred IDE to create the model.
 4. Run `evaluate.py` to get the evaluation metrics for the model. 
 
