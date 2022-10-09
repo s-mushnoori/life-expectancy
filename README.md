@@ -13,18 +13,42 @@ Predicting life expectancy based on [WHO data](https://www.kaggle.com/datasets/k
 ---
 
 # Table of Contents
-1. &nbsp; **Data Cleaning**
+1. &nbsp; **Thought Process**
 
-2. &nbsp; **EDA**
+2. &nbsp; **Data Cleaning**
 
-3. &nbsp; **Feature Engineering**
+3. &nbsp; **Exploratory Data Analysis**
+
+4. &nbsp; **Feature Engineering**
   
-    3.1. &nbsp;&nbsp;&nbsp; abc
+    4.1. &nbsp;&nbsp;&nbsp; abc
     
-    3.2. &nbsp;&nbsp;&nbsp; abcd
+    4.2. &nbsp;&nbsp;&nbsp; abcd
 
-4. &nbsp; **Model Training**
+5. &nbsp; **Model Training**
 
-5. &nbsp; **Future Considerations**
+6. &nbsp; **Thoughts and Future Considerations**
 
 ---
+## 1. &nbsp; Thought Process
+
+
+---
+## 2. &nbsp; Data Cleaning
+
+
+---
+## 3. &nbsp; Exploratory Data Analysis
+
+
+---
+## 4. &nbsp; Feature Engineering
+
+
+---
+## 5. &nbsp; Model Training
+
+
+---
+## 6. &nbsp; Thoughts and Future Considerations
+
