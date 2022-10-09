@@ -27,7 +27,9 @@ Predicting life expectancy based on [WHO data](https://www.kaggle.com/datasets/k
 
 5. &nbsp; **Model Training**
 
-6. &nbsp; **Thoughts and Future Considerations**
+6. &nbsp; **Refactoring**
+
+7. &nbsp; **Thoughts and Future Considerations**
 
 ---
 ## 1. &nbsp; Thought Process
@@ -63,7 +65,7 @@ To this end, a preprocessor class was written to efficiently calculate and imput
 
 ---
 ## 3. &nbsp; Exploratory Data Analysis
-EDA can be viewed [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/2_EDA.ipynb). The results of the EDA are summarized below:
+EDA and in-depth explanations can be viewed [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/2_EDA.ipynb). The results of the EDA are summarized below:
 
 The purpose of EDA is to understand our dataset better. Here we noticed some expected trends such as an inverse correlation between life expectancy and infant mortality rate. 
 We also saw some unexpected trends such as a direct (albeit weak) correlation between net alcohol consumption per capita and life expectancy!
@@ -74,12 +76,24 @@ We also noted that some of the independent features were strongly correlated. Th
 
 ---
 ## 4. &nbsp; Feature Engineering
+Prototyping for feature engineering can be found [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/3_feature_engineering.ipynb)
 
+The next step is to use the information we gathered from EDA and engineer our features in some way to improve performance. We had two main components to our feature engineering process: **feature transformation** and **feature encoding**.
+
+1. **Feature transformation:** As we saw in the EDA section, our features are pretty skewed. To deal with this, we applied a log transform which significantly reduced the skew and brought them closer to a normal distribution. 
+
+2. **Feature encoding:** There was one feature `'Status'` which was encoded into two resulting columns, 'Developed' and 'Developing'. Arguably the feature `'Year`' is an ordinal variable and can also be encoded, but this was not done here. 
+
+Once again a feature engineering class was written to achieve our egineering goals and also modularize the code. 
 
 ---
 ## 5. &nbsp; Model Training
 
 
 ---
-## 6. &nbsp; Thoughts and Future Considerations
+## 6. &nbsp; Refactoring
+
+
+---
+## 7. &nbsp; Thoughts and Future Considerations
 1. Standardize naming conventions for columns
