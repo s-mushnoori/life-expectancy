@@ -40,6 +40,7 @@ For this take-home assignment, we are tasked with building a linear regression m
 #### However, there are a few issues with this approach:
 1. If we were to aggregate data from 14 years for the train set and use data from the most recent year for the test set, we are reducing the number of training samples we have available by  a factor of 10: from >2000 to <200.
 2. If we were to leave `'Country'` as a variable, we would have to encode it, meaning we'd be adding 192 extra features. We could start running into dimensionality issues at this point.
+3. If we were to explicitly choose data with `'Year'` as 2015 as the test set, our test set would only have 193 rows. This seems a little too low since typically tests sets are chosen to be around 25% to 33% of the dataset.
 
 #### In light of this, we will choose a simpler approach to the problem:
 1. We will ignore `'Country'` as a feature for now, and create a model based on the entire dataset. 
@@ -50,7 +51,15 @@ For this take-home assignment, we are tasked with building a linear regression m
 
 ---
 ## 2. &nbsp; Data Cleaning
+Prototyping and more in-depth explanations can be found in the Jupyter notebook [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/1_cleaning.ipynb).
 
+We will now begin the data cleaning process, arguably the most important part of a data science pipeline. Descriptions for each of the features was not available so I made a best guess as to what the column represent. This information is useful to know how to potentially deal with anomalies in some features. 
+
+Column values were modified to be logically consistent. One column was found to have >55% missing values, and was dropped. For all other columns, missing values were first imputed based on the median value for that _country_. The remaining missing values were imputed with the median value for that _year_ (across all countries). This was the best way to preserve data quality as well as avoid dropping too many rows. More detail can be found in the link above. 
+
+Note that we always want to train test split the data BEFORE imputing mmissing values. This is to avoid data leakage. We want to calculate our median based _only_ on the training data, and impute that information to both the train and test set. 
+
+To this end, a preprocessor class was written to efficiently calculate and impute missing values. 
 
 ---
 ## 3. &nbsp; Exploratory Data Analysis
@@ -66,4 +75,4 @@ For this take-home assignment, we are tasked with building a linear regression m
 
 ---
 ## 6. &nbsp; Thoughts and Future Considerations
-
+1. Standardize naming conventions for columns
