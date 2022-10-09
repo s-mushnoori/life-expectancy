@@ -94,7 +94,7 @@ Once again a feature engineering class was written to achieve our egineering goa
 ## 5. &nbsp; Model Training
 For this assignment, we are only required to train a linear regression model. There is no hyperparameter tuning involved, so model training was a simple process. Mean squared error and R^2 were used as our evaluation metrics. 
 
-An MSE of ~15 years and an R^2 of ~0.85 was consistently obtained. Not bad for a quick baseline model. 
+An **MSE of ~15** years and an **R^2 of ~0.85** was consistently obtained. Not bad for a quick baseline model. 
 
 As an added bonus, the prototyping notebook found [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/4_model_training.ipynb) also has some additional code to train, hyperparameter tune, and evaluate multiple models. This code can be built on at a later stage if we wish to productionalize the code in any capacity. 
 
@@ -108,4 +108,4 @@ Having worked on this end-to-end project, I have some thoughts for future iterat
 
 1. Column names in the dataset are quite odd, for example, inconsistent capitalization and spaces. This should be standardized in the event that we want to update the project with fresh incoming data. 
 2. In the model evaluation phase, scaling did not seem to work. This is likely due to improper implementation on my end. In the interest of time, I did not fully debug this, but I would like to revisit this in the future and figure out why scaling did not immpact the results at all. 
-3. 
+3. I did not containerize this code, which could lead to issues running the scripts. Future projects should put some work into using virtual environments and containers to prevent software version conflicts. 
