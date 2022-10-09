@@ -25,10 +25,6 @@ Refactored scripts are available in the [`Scripts`](https://github.com/s-mushnoo
 
 4. &nbsp; **Feature Engineering**
   
-    4.1. &nbsp;&nbsp;&nbsp; abc
-    
-    4.2. &nbsp;&nbsp;&nbsp; abcd
-
 5. &nbsp; **Model Training**
 
 6. &nbsp; **Refactoring**
