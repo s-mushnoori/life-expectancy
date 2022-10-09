@@ -57,13 +57,20 @@ We will now begin the data cleaning process, arguably the most important part of
 
 Column values were modified to be logically consistent. One column was found to have >55% missing values, and was dropped. For all other columns, missing values were first imputed based on the median value for that _country_. The remaining missing values were imputed with the median value for that _year_ (across all countries). This was the best way to preserve data quality as well as avoid dropping too many rows. More detail can be found in the link above. 
 
-Note that we always want to train test split the data BEFORE imputing mmissing values. This is to avoid data leakage. We want to calculate our median based _only_ on the training data, and impute that information to both the train and test set. 
+Note that we always want to train test split the data BEFORE imputing missing values. This is to avoid data leakage. We want to calculate our median based _only_ on the training data, and impute that information to both the train and test set. 
 
 To this end, a preprocessor class was written to efficiently calculate and impute missing values. 
 
 ---
 ## 3. &nbsp; Exploratory Data Analysis
+EDA can be viewed [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/2_EDA.ipynb). The results of the EDA are summarized below:
 
+The purpose of EDA is to understand our dataset better. Here we noticed some expected trends such as an inverse correlation between life expectancy and infant mortality rate. 
+We also saw some unexpected trends such as a direct (albeit weak) correlation between net alcohol consumption per capita and life expectancy!
+
+Next, we saw that several features are heavily skewed. This was later dealt with to improve model performance. 
+
+We also noted that some of the independent features were strongly correlated. This will need further exploration, but for the purposes of this assignment, removing correlated features (multicollinearity) did not improve model performance, so they were ultimately left in the dataset. 
 
 ---
 ## 4. &nbsp; Feature Engineering
