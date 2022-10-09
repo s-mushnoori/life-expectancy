@@ -10,7 +10,7 @@ Refactored scripts are available in the [`Scripts`](https://github.com/s-mushnoo
 # Instructions for use
 
 1. Navigate to the [`Scripts`](https://github.com/s-mushnoori/life-expectancy/tree/main/Scripts) folder and download the contents into your working directory. 
-2. Ensure that `processing.py`, `create_model.py`, and `evaluate.py` are in the same location.
+2. Ensure that [`processing.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/processing.py), [`create_model.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/create_model.py), and [`evaluate.py`](https://github.com/s-mushnoori/life-expectancy/blob/main/Scripts/evaluate.py) are in the same location.
 3. Run `pcreate_model.py` in your preferred IDE to create the model.
 4. Run `evaluate.py` to get the evaluation metrics for the model. 
 
@@ -92,12 +92,20 @@ Once again a feature engineering class was written to achieve our egineering goa
 
 ---
 ## 5. &nbsp; Model Training
+For this assignment, we are only required to train a linear regression model. There is no hyperparameter tuning involved, so model training was a simple process. Mean squared error and R^2 were used as our evaluation metrics. 
 
+An MSE of ~15 years and an R^2 of ~0.85 was consistently obtained. Not bad for a quick baseline model. 
+
+As an added bonus, the prototyping notebook found [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/4_model_training.ipynb) also has some additional code to train, hyperparameter tune, and evaluate multiple models. This code can be built on at a later stage if we wish to productionalize the code in any capacity. 
 
 ---
 ## 6. &nbsp; Refactoring
-
+With all our prototyping done, the code was modularized and refactored into python scripts, which can be found [here](https://github.com/s-mushnoori/life-expectancy/tree/main/Scripts). 
 
 ---
 ## 7. &nbsp; Thoughts and Future Considerations
-1. Standardize naming conventions for columns
+Having worked on this end-to-end project, I have some thoughts for future iterations:
+
+1. Column names in the dataset are quite odd, for example, inconsistent capitalization and spaces. This should be standardized in the event that we want to update the project with fresh incoming data. 
+2. In the model evaluation phase, scaling did not seem to work. This is likely due to improper implementation on my end. In the interest of time, I did not fully debug this, but I would like to revisit this in the future and figure out why scaling did not immpact the results at all. 
+3. 
