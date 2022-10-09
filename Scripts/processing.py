@@ -4,7 +4,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-
 # Define Preprocessor class
 class Preprocessor:
 
@@ -52,8 +51,6 @@ class Preprocessor:
         '''
         return self.fit(X).transform(X)
     
-
-
 
 # Define EngineerFeatures class
 class EngineerFeatures():
@@ -107,5 +104,3 @@ class EngineerFeatures():
 
     def fit_transform(self, X, y=None):
         return self.fit(X).transform(X)
-
-
