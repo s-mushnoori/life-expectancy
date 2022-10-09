@@ -1,6 +1,10 @@
 # life-expectancy
 Predicting life expectancy based on [WHO data](https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who).
 
+Notebooks used for protoyping are available in the [`Notebooks`](https://github.com/s-mushnoori/life-expectancy/tree/main/Notebooks) folder.
+
+Refactored scripts are available in the [`Scripts`](https://github.com/s-mushnoori/life-expectancy/tree/main/Scripts) folder. 
+
 ---
 
 # Instructions for use
