@@ -113,4 +113,5 @@ Having worked on this end-to-end project, I have some thoughts for future iterat
 
 1. Column names in the dataset are quite odd, for example, inconsistent capitalization and spaces. This should be standardized in the event that we want to update the project with fresh incoming data. 
 2. In the model evaluation phase, scaling did not seem to work. This is likely due to improper implementation on my end. In the interest of time, I did not fully debug this, but I would like to revisit this in the future and figure out why scaling did not impact the results at all. 
-3. I did not containerize this code, which could lead to issues running the scripts. Future projects should put some work into using virtual environments and containers to prevent software version conflicts. 
+    - **Update:**    Upon further investigation these results do in fact make sense. Scaling doesn't impact linear regression. Were we to include other models, scaling would likely impact results to some degree. 
+4. I did not containerize this code, which could lead to issues running the scripts. Future projects should put some work into using virtual environments and containers to prevent software version conflicts. 
