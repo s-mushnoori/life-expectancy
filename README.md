@@ -41,12 +41,14 @@ For this take-home assignment, we are tasked with building a linear regression m
 
 #### However, there are a few issues with this approach:
 1. If we were to aggregate data from 14 years for the train set and use data from the most recent year for the test set, we are reducing the number of training samples we have available by  a factor of 10: from >2000 to <200.
-2. If we were to leave `'Country'` as a variable, we would have to encode it, meaning we'd be adding 192 extra features. We could start running into dimensionality issues at this point.
+2. If we were to leave `'Country'` as a variable, we would have to encode it, meaning we'd be adding 192 extra features. We could start running into dimensionality issues at this point. 
+    - **Update:**    The country column was encoded and this significantly improved results. The underlying  notebooks and scripts have been updated.
 3. If we were to explicitly choose data with `'Year'` as 2015 as the test set, our test set would only have 193 rows. This seems a little too low since typically tests sets are chosen to be around 25% to 33% of the dataset.
 
 #### In light of this, we will choose a simpler approach to the problem:
 1. We will ignore `'Country'` as a feature for now, and create a model based on the entire dataset. 
     - Since index values are preserved, we can later associate the datapoints with the country if required.
+    - **Update:**    Now the datasets do have encoded country values. As a result, this can easily be extracted as required.
 2. We will also not aggregate yearly data and preserve the size of our dataset. 
 3. The problem statement will hence be interpreted as "predict the life expectancy based on available features," and we will ignore the country specific and year specific components. 
 
@@ -91,6 +93,13 @@ Once again a feature engineering class was written to achieve our egineering goa
 For this assignment, we are only required to train a linear regression model. There is no hyperparameter tuning involved, so model training was a simple process. Mean squared error and R^2 were used as our evaluation metrics. 
 
 An **MSE of ~15** years and an **R^2 of ~0.85** was consistently obtained. Not bad for a quick baseline model. 
+
+**Update:**    After one-hot encoding the `'Country'` column, we were able to achieve significantly better results:
+
+|Data|MSE|R^2|
+|:--:|:--:|:--:|
+|Without encoding|~15|~0.85| 
+|With encoding|~4|~0.95|
 
 As an added bonus, the prototyping notebook found [here](https://github.com/s-mushnoori/life-expectancy/blob/main/Notebooks/4_model_training.ipynb) also has some additional code to train, hyperparameter tune, and evaluate multiple models. This code can be built on at a later stage if we wish to productionalize the code in any capacity. 
 
