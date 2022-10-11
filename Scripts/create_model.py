@@ -11,10 +11,15 @@ df = pd.read_csv(path)
 # Drop rows with null values in target variable
 df.dropna(subset=['Life expectancy '], inplace=True)
 
+# Encode 'Country' column prior to split
+df_ohe = df.copy()
+df_ohe['Country_dummy'] = df_ohe['Country']
+df_ohe = pd.get_dummies(df_ohe, columns=['Country_dummy'])
+
 # Train test split
 from sklearn.model_selection import train_test_split
-X = df.drop('Life expectancy ', axis=1)
-y = df['Life expectancy ']
+X = df_ohe.drop('Life expectancy ', axis=1)
+y = df_ohe['Life expectancy ']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 
 # Clean data

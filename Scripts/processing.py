@@ -66,7 +66,7 @@ class EngineerFeatures():
 
         # Drop uncorrelated or unimportant features
         cols_to_drop = [
-            'Country', # This column cannot be encoded and doesn't carry any useful information
+            'Country', # This column has been encoded and used for processing. It can be dropped now. 
             'Population' # Very weak correaltion to target variable
             ]
         
